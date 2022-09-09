@@ -36,15 +36,3 @@ export const ButtonText = styled.Text`
 export const TasksTitle = styled(HomeTitle)`
   margin: 50px 0px 50px 0px;
 `
-export const TaskButton = styled.TouchableOpacity`
-  background-color: #29292e;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 50px;
-  align-items: center;
-`
-export const TasksListText = styled.Text`
-  color: #f1f1f1;
-  font-size: 20px;
-  font-weight: bold;
-`

@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import {FlatList} from 'react-native'
-import {Button, ButtonText, Container, HomeTitle, Input, TaskButton, TasksListText, TasksTitle} from './HomeBase'
-import {TaskList} from './HomeTypes'
+import {TaskList} from '../../components/TaskList/TaskList'
+import {Button, ButtonText, Container, HomeTitle, Input, TasksTitle} from './HomeBase'
+import {TaskListState} from './HomeTypes'
 
 export const Home = () => {
   const [newTask, setNewTask] = useState('')
-  const [taskList, setTaskList] = useState<TaskList[]>([])
+  const [taskList, setTaskList] = useState<TaskListState[]>([])
 
   const handleAddNewTask = () => {
     const data = {
@@ -23,15 +23,7 @@ export const Home = () => {
         <ButtonText onPress={handleAddNewTask}>Adicionar</ButtonText>
       </Button>
       <TasksTitle>Minhas Tarefas</TasksTitle>
-      <FlatList
-        data={taskList}
-        keyExtractor={(item) => item.id}
-        renderItem={({item}) => (
-          <TaskButton>
-            <TasksListText>{item.title}</TasksListText>
-          </TaskButton>
-        )}
-      />
+      <TaskList data={taskList} />
     </Container>
   )
 }
