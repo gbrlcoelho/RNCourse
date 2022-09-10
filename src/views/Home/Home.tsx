@@ -1,18 +1,18 @@
 import React, {useState} from 'react'
 import {TaskList} from '../../components/TaskList/TaskList'
+import {useTasks} from '../../hooks/useTasks'
 import {Button, ButtonText, Container, HomeTitle, Input, TasksTitle} from './HomeBase'
-import {TaskListState} from './HomeTypes'
 
 export const Home = () => {
   const [newTask, setNewTask] = useState('')
-  const [taskList, setTaskList] = useState<TaskListState[]>([])
+  const {addTask} = useTasks()
 
   const handleAddNewTask = () => {
     const data = {
       id: String(new Date().getTime()),
       title: newTask ? newTask : 'Empty task!',
     }
-    setTaskList([...taskList, data])
+    addTask(data)
   }
 
   return (
@@ -23,7 +23,7 @@ export const Home = () => {
         <ButtonText onPress={handleAddNewTask}>Adicionar</ButtonText>
       </Button>
       <TasksTitle>Minhas Tarefas</TasksTitle>
-      <TaskList data={taskList} />
+      <TaskList />
     </Container>
   )
 }

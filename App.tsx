@@ -1,5 +1,6 @@
 import React from 'react'
 import {SafeAreaView, StatusBar} from 'react-native'
+import {TasksProvider} from './src/context/TasksContext'
 import {Home} from './src/views/Home/Home'
 
 const App = () => {
@@ -7,7 +8,9 @@ const App = () => {
     <>
       <StatusBar backgroundColor={'#121214'} />
       <SafeAreaView style={{flex: 1}}>
-        <Home />
+        <TasksProvider>
+          <Home />
+        </TasksProvider>
       </SafeAreaView>
     </>
   )
