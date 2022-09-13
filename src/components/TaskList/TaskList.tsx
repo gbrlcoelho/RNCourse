@@ -1,7 +1,7 @@
 import React from 'react'
 import {Alert, FlatList} from 'react-native'
 import {useTasks} from '../../hooks/useTasks'
-import {TaskButton, TasksListText} from '../TaskListBase'
+import {TaskButton, TasksListText} from './TaskListBase'
 
 export const TaskList = () => {
   const {tasksData, removeTask} = useTasks()
