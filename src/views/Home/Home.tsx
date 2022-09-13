@@ -19,7 +19,7 @@ export const Home = () => {
     <Container>
       <HomeTitle>Hello Dev!</HomeTitle>
       <Input placeholder='Nova Tarefa' placeholderTextColor='#555' onChangeText={setNewTask} />
-      <Button activeOpacity={0.7}>
+      <Button activeOpacity={0.7} testID='addButton'>
         <ButtonText onPress={handleAddNewTask}>Adicionar</ButtonText>
       </Button>
       <TasksTitle>Minhas Tarefas</TasksTitle>
